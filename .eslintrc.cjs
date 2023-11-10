@@ -21,7 +21,6 @@ module.exports = {
 			}
 		}
 	],
-	parser: 'vue-eslint-parser',
 	parserOptions: {
 		ecmaVersion: 'latest',
 		parser: '@typescript-eslint/parser',
@@ -35,6 +34,7 @@ module.exports = {
 		'prettier/prettier': 'error',
 		quotes: ['error', 'single'],
 		semi: ['error', 'always'],
+		'@typescript-eslint/no-explicit-any': 'off',
 		'vue/multi-word-component-names': 'off'
 	}
 };
