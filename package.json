@@ -1,34 +1,45 @@
 {
-  "name": "vite-project",
-  "private": true,
-  "version": "0.0.0",
-  "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc && vite build",
-    "preview": "vite preview",
-    "lint": "npm run lint:eslinit",
-    "lint:eslinit": "eslint --ext .js,.jsx,.ts,.tsx,.vue --fix --quiet ./src"
-  },
-  "dependencies": {
-    "vue": "^3.3.4"
-  },
-  "devDependencies": {
-    "@types/node": "^20.9.0",
-    "@typescript-eslint/eslint-plugin": "^6.10.0",
-    "@typescript-eslint/parser": "^6.10.0",
-    "@vitejs/plugin-vue": "^4.2.3",
-    "autoprefixer": "^10.4.16",
-    "eslint": "^8.53.0",
-    "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-prettier": "^5.0.1",
-    "eslint-plugin-vue": "^9.18.1",
-    "husky": "^8.0.3",
-    "prettier": "^3.0.3",
-    "sass": "^1.69.5",
-    "sass-loader": "^13.3.2",
-    "typescript": "^5.0.2",
-    "vite": "^4.4.5",
-    "vite-plugin-eslint": "^1.8.1",
-    "vue-tsc": "^1.8.5"
-  }
+	"name": "vite-project",
+	"private": true,
+	"version": "0.0.0",
+	"scripts": {
+		"dev": "vite",
+		"build": "vue-tsc && vite build",
+		"preview": "vite preview",
+		"lint": "npm run lint:eslint",
+		"lint:eslint": "eslint --ext .js,.jsx,.ts,.tsx,.vue --fix --quiet ./src",
+		"prepare": "husky install"
+	},
+	"dependencies": {
+		"vue": "^3.3.4"
+	},
+	"devDependencies": {
+		"@commitlint/cli": "^18.2.0",
+		"@commitlint/config-conventional": "^18.1.0",
+		"@types/node": "^20.9.0",
+		"@typescript-eslint/eslint-plugin": "^6.10.0",
+		"@typescript-eslint/parser": "^6.10.0",
+		"@vitejs/plugin-vue": "^4.2.3",
+		"autoprefixer": "^10.4.16",
+		"commitlint": "^18.2.0",
+		"eslint": "^8.53.0",
+		"eslint-config-prettier": "^9.0.0",
+		"eslint-plugin-prettier": "^5.0.1",
+		"eslint-plugin-vue": "^9.18.1",
+		"husky": "^8.0.3",
+		"lint-staged": "^15.0.2",
+		"prettier": "^3.0.3",
+		"sass": "^1.69.5",
+		"sass-loader": "^13.3.2",
+		"typescript": "^5.0.2",
+		"vite": "^4.4.5",
+		"vite-plugin-eslint": "^1.8.1",
+		"vue-tsc": "^1.8.5"
+	},
+	"lint-staged": {
+		"**/*.{vue,js,jsx,tsx,ts,json,md}": [
+			"npm run lint:eslint",
+			"git add ."
+		]
+	}
 }
