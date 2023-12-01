@@ -7,7 +7,7 @@ import viteEslint from 'vite-plugin-eslint';
 import viteImagemin from 'vite-plugin-imagemin';
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
 
-const variablePath = normalizePath(path.resolve('./src/variable.scss'));
+const variablePath = normalizePath(path.resolve('./src/variable.less'));
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -70,7 +70,7 @@ export default defineConfig({
 			generateScopedName: '[local]___[hash:base64:5]'
 		},
 		preprocessorOptions: {
-			scss: {
+			less: {
 				// additionalData 的内容会在每个 scss 文件的开头自动注入
 				additionalData: `@import "${variablePath}";`
 			}

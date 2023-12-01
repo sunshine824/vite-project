@@ -11,12 +11,6 @@ import { useCssModule } from 'vue';
 const style = useCssModule();
 </script>
 
-<style module lang="scss">
-.header {
-	color: $theme-color;
-	text-decoration: dashed;
-	display: flex;
-	flex-flow: row nowrap;
-	justify-content: center;
-}
+<style module lang="less">
+@import './index.module.less';
 </style>
